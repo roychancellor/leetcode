@@ -1,0 +1,63 @@
+class Solution {
+    public String intToRoman(int num) {
+        String roman = "";
+        int testVal = num;
+        
+        while(testVal > 0) {
+            if(testVal >= 1000) {
+                testVal -= 1000;
+                roman += "M";
+            }
+            else if(testVal >= 900) {
+                testVal -= 900;
+                roman += "CM";
+            }
+            else if(testVal >= 500) {
+                testVal -= 500;
+                roman += "D";
+            }
+            else if(testVal >= 400) {
+                testVal -= 400;
+                roman += "CD";
+            }
+            else if(testVal >= 100) {
+                testVal -= 100;
+                roman += "C";
+            }
+            else if(testVal >= 90) {
+                testVal -= 90;
+                roman += "XC";
+            }
+            else if(testVal >= 50) {
+                testVal -= 50;
+                roman += "L";
+            }
+            else if(testVal >= 40) {
+                testVal -= 40;
+                roman += "XL";
+            }
+            else if(testVal >= 10) {
+                testVal -= 10;
+                roman += "X";
+            }
+            else if(testVal >= 9) {
+                testVal -= 9;
+                roman += "IX";
+            }
+            else if(testVal >= 5) {
+                testVal -= 5;
+                roman += "V";
+            }
+            else if(testVal >= 4) {
+                testVal -= 4;
+                roman += "IV";
+            }
+            else if(testVal >= 1) {
+                testVal -= 1;
+                roman += "I";
+            }
+        }
+        
+        return roman;
+    }    
+}
