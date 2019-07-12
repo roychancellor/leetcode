@@ -1,0 +1,53 @@
+class Solution {
+   public int romanToInt(String s) {
+       //Convert inout string to upper case to make it consistent
+       s.toUpperCase();
+       
+       //Class data
+       int sum = 0;
+       int previous = 0;
+       int current = 0;
+
+       //Loop through the letters
+       //Assign integer values to each character
+       //Check for current value being less than current; if so, subtract it
+       //For example, IX is 9, which is 10 - 1.
+       for (int i = s.length() - 1; i >= 0; i--) {
+            current = Translate(s.charAt(i));
+
+            if (current < previous) {
+               sum -= current;
+            }
+            else {
+               sum += current;
+            }
+            previous = current;
+       }
+       return sum;
+   }
+
+  public int Translate(char x){
+      if (x == 'I') {
+          return 1;
+      }
+      if (x =='V') {
+          return 5;
+      }
+      if (x =='X') {
+          return 10;
+      }
+      if (x =='L') {
+          return 50;
+      }
+      if (x =='C') {
+          return 100;
+      }
+      if (x =='D') {
+          return 500;
+      }
+      if (x =='M') {
+          return 1000;
+      }
+    return 0;
+  }
+}
